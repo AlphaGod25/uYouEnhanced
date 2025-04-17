@@ -16,7 +16,7 @@ on:
         default: "3.0.4"
         required: true
         type: string
-      decrypted_youtube_url:
+      decrypted_youtube_url2:
         description: "Direct URL of the decrypted YouTube IPA"
         default: ""
         required: true
@@ -117,7 +117,7 @@ jobs:
 
       - name: Hash YT ipa url
         run: |
-          URL_YT="$(jq -r '.inputs.decrypted_youtube_url' $GITHUB_EVENT_PATH)"
+          URL_YT="$(jq -r '.inputs.decrypted_youtube_url2' $GITHUB_EVENT_PATH)"
           echo ::add-mask::$URL_YT
           echo URL_YT=$URL_YT >> $GITHUB_ENV
 
